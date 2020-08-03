@@ -1,0 +1,28 @@
+
+<h3>{{isAddMode ? 'Add' : 'Edit'}} Customer</h3>
+
+<div *ngIf="customer" >
+    <div>
+        <div>
+            <label>CustomerId :</label>
+            <label *ngIf="customerId != 0">{{customer.id}}</label>
+        </div>
+        <div>
+            <label>Name :</label>
+            <input  type="text" [(ngModel)]="customer.name">
+        </div>
+        <div>
+            <label>Age :</label>
+            <input  type="number" [(ngModel)]="customer.age">
+        </div>
+    </div>
+    <button class="button"  *ngIf="customerId != 0" class="btn btn-danger" (click)="onEditCustomet()">Submit Edit Customer !</button>
+    <button class="button" *ngIf="customerId == 0"  class="btn btn-primary" (click)="onClickSubmit()" >
+        Submit Create Customer !
+    </button>
+   
+    <button routerLink="/customer" class="btn btn-dark">Customer</button>
+
+</div> 
+
+{{getCustomerCheckMax| json}}

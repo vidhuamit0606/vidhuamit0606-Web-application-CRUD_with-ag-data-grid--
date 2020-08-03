@@ -1,0 +1,33 @@
+<div class="col-md-12">
+
+    <div class="col-md-12">
+        <div class="div">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>Product works!</h3>
+                    <hr />
+                    <button routerLink="/product-edit" [queryParams]="{ id: '0' }" class="btn btn-light">Create Product</button>
+                    <hr>
+                    <div>
+                        <div class="row">
+
+                            <div class="col-xs-6">
+                                <p *ngFor="let productGet of productGet">
+                                    {{ productGet.productID }}
+                                    {{ productGet.name }}
+                                    {{ productGet.price }}
+                                    <button  routerLink="/product-edit"
+                                        [queryParams]="{ id: productGet.productID }" class="btn btn-danger">Edit</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+    </div>
+
+
+</div>
+{{productGet| json}}
